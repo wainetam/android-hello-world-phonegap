@@ -246,9 +246,10 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
-    debugCompile project(path: ":CordovaLib", configuration: "debug")
-    releaseCompile project(path: ":CordovaLib", configuration: "release")
+    debugCompile project(path: ':CordovaLib', configuration: 'debug')
+    releaseCompile project(path: ':CordovaLib', configuration: 'release')
     // SUB-PROJECT DEPENDENCIES END
+    compile files('libs/gson-2.3.1.jar')
 }
 
 def promptForReleaseKeyPassword() {

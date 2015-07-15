@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="signal-ui-android-v4.90.122-prod">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/signal-ui-android-v4.90.122-prod.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
