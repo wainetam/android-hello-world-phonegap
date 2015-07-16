@@ -12,6 +12,12 @@
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
+                    ],
+                    "plugins": [
+                        {
+                            "xml": "<feature name=\"SignalPG\"><param name=\"android-package\" value=\"com.signal360.plugin.SignalPG\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -19,6 +25,9 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "com.signal360.SignalPGPlugin": {
             "PACKAGE_NAME": "com.example.hello"
         }
     },

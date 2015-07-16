@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+		id="com.signal360.SignalPGPlugin" version="0.1.0">
+
+	<name>SignalPGPlugin</name>
+	<description>Signal360 PhoneGap Plugin</description>
+	<keywords>signal360,sdk,phonegap</keywords>
+
+	<asset src="www/js/signalpg.js" target="js/signalpg.js" />
+	<!-- ios -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget/plugins">
+			<feature name="SignalPG">
+				<param name="ios-package" value="SignalPG"/>
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		<header-file src="src/ios/SignalPG.h" />
+		<source-file src="src/ios/SignalPG.m" />
+
+		<framework src="AudioToolbox.framework" />
+		<framework src="CoreAudio.framework" />
+		<framework src="Foundation.framework" />
+		<framework src="AdSupport.framework" />
+		<framework src="CoreLocation.framework" />
+		<framework src="CoreBluetooth.framework" />
+		<framework src="Accelerate.framework" />
+		<framework src="MobileCoreServices.framework" />
+		<framework src="SystemConfiguration.framework" />
+		<framework src="CoreGraphics.framework" />
+		<framework src="UIKit.framework" />
+		<framework src="AVFoundation.framework" />
+		<framework src="libsqlite3.dylib" />
+		<framework src="libstdc++.dylib" />
+		<framework src="libz.dylib" />
+		<!-- add appropriate Signal360 SDK into XCode -->
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+    <!-- <config-file target="res/xml/config.xml" parent="/*"> -->
+    <config-file target="res/xml/config.xml" parent="plugins">
+      <feature name="SignalPG">
+        <param name="android-package" value="com.signal360.plugin.SignalPG"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <!-- copy lib resources -->
+<!--     <source-file src="src/android/libs/google-play-services.jar" target-dir="libs" />
+    <source-file src="src/android/libs/ormlite-android-4.24.jar" target-dir="libs" />
+    <source-file src="src/android/libs/ormlite-core-4.24.jar" target-dir="libs" />
+    <source-file src="src/android/libs/gson-2.3.1.jar" target-dir="libs" /> -->
+    <!-- copy layout resources -->
+    <source-file src="src/android/res/layout/signal_content_list_item_layout.xml" target-dir="res/layout" />
+    <source-file src="src/android/res/layout/signal_content_navigator_layout.xml" target-dir="res/layout" />
+    <source-file src="src/android/res/layout/signal_content_web_view_layout.xml" target-dir="res/layout" />
+    <!-- add plugin source code -->
+    <source-file src="src/android/SignalPG.java" target-dir="src/com/signal360/plugin/" />
+  </platform>
+</plugin>

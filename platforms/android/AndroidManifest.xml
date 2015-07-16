@@ -11,6 +11,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:configChanges="screenLayout|orientation|keyboard|keyboardHidden" android:enabled="true" android:launchMode="singleTop" android:name="com.signal360.sdk.ui.activities.SignalContentNavigatorActivity" />
+        <activity android:configChanges="screenLayout|orientation|keyboard|keyboardHidden" android:enabled="true" android:launchMode="singleTop" android:name="com.signal360.sdk.ui.activities.SignalContentWebViewActivity" />
+        <receiver android:enabled="true" android:name="com.signal360.sdk.ui.SignalUIBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.signal360.sdk.ACTION_ACTIVATIONS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.signal360.sdk.core.SignalService" />
+        <receiver android:enabled="true" android:name="com.signal360.sdk.core.SignalBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.signal360.sdk.ACTION_IPC" />
+                <action android:name="com.signal360.sdk.ACTION_GEO_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="7095000" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="22" />
 </manifest>
